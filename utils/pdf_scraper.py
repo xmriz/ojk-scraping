@@ -75,6 +75,6 @@ def download_pdfs(df):
         print(f"Scraped {index + 1} out of {len(paths)} rows")
 
     pdf_df = pd.DataFrame(pdf_data, columns=['title', 'filename', 'altlink'])
-    pdf_df.to_csv('ojk_pdf_data.csv', index=False)
+    pdf_df.to_csv('./csv/ojk_pdf_data.csv', index=False)
     print("PDF data has been scraped, downloaded, and saved to ojk_pdf_data.csv")
     driver.quit()
