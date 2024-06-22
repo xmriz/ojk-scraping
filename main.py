@@ -6,10 +6,10 @@ import time
 
 
 def main():
-    # # Scrape all pages
-    # print("Starting to scrape all pages...")
-    # scrape_all_pages()
-    # print("Scraping of all pages completed.")
+    # Scrape all pages
+    print("Starting to scrape all pages...")
+    scrape_all_pages()
+    print("Scraping of all pages completed.")
 
     # Download documents
     print("Starting to download documents...")
