@@ -81,8 +81,8 @@ def scrape_all_pages():
     driver.quit()
 
     # create csv folder if not exists
-    if not os.path.exists('./csv'):
-        os.makedirs('./csv')
+    if not os.path.exists('./log'):
+        os.makedirs('./log')
 
-    df.to_csv('./csv/ojk_all_pages.csv', index=False)
-    print("Data has been scraped and saved to ojk_all_pages.csv")
+    df.to_csv('./log/ojk_table_scraping_result.csv', index=False)
+    print("Data has been scraped and saved to ojk_table_scraping_result.csv")

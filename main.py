@@ -6,7 +6,7 @@ import time
 
 
 def main():
-    # Scrape all pages
+    # # Scrape all pages
     # print("Starting to scrape all pages...")
     # scrape_all_pages()
     # print("Scraping of all pages completed.")
@@ -14,10 +14,10 @@ def main():
     # Download documents
     print("Starting to download documents...")
 
-    while not os.path.exists('./csv/ojk_all_pages.csv'):
+    while not os.path.exists('./log/ojk_table_scraping_result.csv'):
         time.sleep(1)
 
-    df = pd.read_csv('./csv/ojk_all_pages.csv')
+    df = pd.read_csv('./log/ojk_table_scraping_result.csv')
     download_documents(df)
     print("Downloading of documents completed.")
 
