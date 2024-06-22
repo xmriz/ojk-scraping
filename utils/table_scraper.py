@@ -1,19 +1,10 @@
 import os
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
 
-
-def setup_driver():
-    chrome_options = Options()
-    chrome_options.add_argument("--disable-gpu")
-    service = ChromeService(executable_path='./chromedriver.exe')
-    driver = webdriver.Chrome(service=service, options=chrome_options)
-    return driver
+from utils.setup_driver import setup_driver
 
 
 def scrape_page(driver):
@@ -81,9 +72,9 @@ def scrape_all_pages():
         soup = BeautifulSoup(driver.page_source, 'html.parser')
         body = soup.find('body')
         if body.text.strip() == '':
-            df.at[index, 'notes'] = 'Need to sign in'
+            df.at[index, 'status'] = 'Need to sign in'
         else:
-            df.at[index, 'notes'] = 'Success'
+            df.at[index, 'status'] = 'Success'
 
         print(f"Checked {index + 1} out of {len(df)} rows.")
 
